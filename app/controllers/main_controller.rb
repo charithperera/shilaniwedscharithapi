@@ -12,8 +12,7 @@ class MainController < ApplicationController
       guests.each do |guest|
         guest_info = {}
         guest_info[:guest_id] = guest.id
-        guest_info[:first_name] = guest.first_name
-        guest_info[:last_name] = guest.last_name
+        guest_info[:name] = guest.name
         guest_info[:rsvp_id] = guest.rsvp.id
         guest_info[:attend] = guest.rsvp.attend
         guest_info[:diet] = guest.rsvp.diet

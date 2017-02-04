@@ -11,13 +11,11 @@ chow_and_shash.pin = 123456
 chow_and_shash.save
 
 chow = Guest.new
-chow.first_name = "Chalana"
-chow.last_name = "Hewage"
+chow.name = "Chalana"
 chow.save
 
 shash = Guest.new
-shash.first_name = "Shashenka"
-shash.last_name = "Withanage"
+shash.name = "Shashenka"
 shash.save
 
 chow_and_shash.guests << chow
