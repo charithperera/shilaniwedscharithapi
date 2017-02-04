@@ -27,14 +27,15 @@ class MainController < ApplicationController
     attending = params.select { |key| key.include? "attending" }
     diet = params.select { |key| key.include? "diet" }
 
+
     attending.each do |key, value|
-      rsvp = Rsvp.where(:guest_id => +key[0]).first
+      rsvp = Rsvp.where(:guest_id => key.split("-").first.to_i).first
       rsvp.attend = value
       rsvp.save
     end
 
     diet.each do |key, value|
-      rsvp = Rsvp.where(:guest_id => +key[0]).first
+      rsvp = Rsvp.where(:guest_id => key.split("-").first.to_i).first
       rsvp.diet = value
       rsvp.save
     end
